@@ -1,5 +1,5 @@
 <?php
-$user = $_COOKIE["user"];
+$user = $_COOKIE['user'];
 if(isset($user)){
     echo "<center><h1>Welcome $user</h1></center>";
     echo "<center><h2> You are successfully logged in</h2></center>";

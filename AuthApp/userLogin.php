@@ -22,7 +22,7 @@
         $user = $_POST['username'];
         $pass = $_POST['password'];
         if(strcmp($user,"vivek")==0 and strcasecmp($pass,"vivek")==0){
-            setcookie("user", $user, time() + 3600, "/"); 
+             setcookie("user", $user, time() + 3600, "/"); 
             header("Location: welcome.php");  
             exit(); 
         }else
