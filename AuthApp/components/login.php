@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Login to dabluDabluDabludotCom</h1>
     <br>
-    <form>
+     <form method="post" action="./controllers/login.php">
   <div class="mb-3 w-50">
     <label for="email" class="form-label">Email address</label>
     <input type="email"  name='email' class="form-control" aria-describedby="emailHelp">
@@ -17,7 +17,12 @@
   </div><br>
   <div class="w-50 center ">
     <center>
-   <button type="submit" class="btn btn-primary">Submit</button>
+        <?php
+if (isset($_GET['error']) && $_GET['error'] == 'invalid') {
+    echo "<center><font color='red' size='5'>Invalid Credentials</font></center> <br>";
+}
+?>
+   <button type="submit" name="loginForm" class="btn btn-primary">Submit</button>
    <button type="reset" class="btn btn-warning">Reset</button>
 </center>
   </div>

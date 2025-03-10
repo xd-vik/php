@@ -9,12 +9,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?signup=true">Signup</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?login=true">Login</a>
-        </li>
+        
+<?php if (isset($_SESSION['user'])) { ?>  
+   <li class="nav-item">
+    <a class="nav-link" href="?profile=true"><?php echo $_SESSION['user']['name']  ?></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./controllers/login.php?logout=true">Logout</a>
+  </li>
+<?php } else { ?>
+  <li class="nav-item">
+    <a class="nav-link" href="?signup=true">Signup</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="?login=true">Login</a>
+  </li>
+<?php } ?>
+
+       
       </ul>
     </div>
   </div>

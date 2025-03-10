@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../utils/db.php");
 
 if(isset($_POST['signForm'])){
@@ -10,11 +11,11 @@ if(isset($_POST['signForm'])){
     (`id`,`name`, `email`, `password`)
      values (NULL, '$name', '$email', '$password')");
 
-   $sucess = $user->execute();
+   $result = $user->execute();
 
-    if($sucess){
-         echo $name. "Registered successfully";
-         
+    if ($result){
+         $_SESSION["user"] = ["name"=>$name, "email"=>$email, "pass"=>$password];
+         header("Location: /php/AuthApp");
     }else{
         echo "Error creating user";
     }

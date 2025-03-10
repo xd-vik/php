@@ -7,16 +7,18 @@
 </head>
 <body>
 <?php 
+    session_start();
     include 'components/header.php'; 
    if(isset($_GET['signup'])){
         include('./components/signup.php');
     } else if(isset($_GET['login'])){
         include "components/login.php";
-    } else if(isset($_COOKIE['user'])){
-        include "welcome.php";
-    } else {
-        include "components/login.php";
+    } else if(isset($_GET['profile'])){
+        include "components/profile.php";
     }
+
+    
+
 
 ?>
     

@@ -18,6 +18,7 @@
   <br>
   <div class="w-50 center ">
     <center>
+
    <button type="submit" name="signForm" class="btn btn-primary">Submit</button>
    <button type="reset" class="btn btn-warning">Reset</button>
 </center>
